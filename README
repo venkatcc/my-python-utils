@@ -1,0 +1,17 @@
+svn-status-uq-walk-threaded.py
+==============================
+
+I often have to access remote SVN repositories from home, and I find that the network connection chokes
+when I operate simple SVN commands like "svn status -uq ." (especially over VPN) on a directory tree 
+containing anything more than, say, 25 files, and in general fails. This has been a source of great 
+frustration for me. And after a few times of this sort of thing happening, while this is not unexpected 
+anymore, it nevertheless is a cause for consternation. And this drove me to write this multi-threaded 
+python utility that walks the directory tree, and runs the "svn status -uq <dir name>" command with the 
+--depth option set to 'files' (meaning no sub-directories are considered for the "svn status" check. 
+(my work server prints out "xrdb: Can't open display ''" when one logins via ssh, and therefore the 
+grep -v to not display those lines).
+
+
+I hope to add other svn commands I often have to use to get anything meaningful done when working from
+home.
+
